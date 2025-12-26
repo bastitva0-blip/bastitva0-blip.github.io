@@ -1,49 +1,70 @@
+:root {
+    --primary: #06A3DA;
+    --dark-bg: #091E3E;
+    --light-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --text-color: #444444;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --light-bg: #051224;
+    --card-bg: #0a1f3d;
+    --text-color: #e0e0e0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    transition: 0.3s ease;
 }
 
-header {
-    text-align: center;
-    padding: 50px;
-    background-color: #007bff;
-    color: white;
+.hero-header {
+    background: linear-gradient(rgba(9, 30, 62, 0.85), rgba(9, 30, 62, 0.85)), 
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920');
+    background-size: cover;
+    padding: 10rem 0;
 }
 
-section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.navbar { background: #091E3E; }
+
+.section-title {
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-h2 {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
+/* Cards */
+.bg-card, .card {
+    background-color: var(--card-bg) !important;
+    border: none;
+    color: var(--text-color);
+    transition: 0.3s;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.card:hover {
+    transform: translateY(-10px);
+    background-color: var(--primary) !important;
+    color: white !important;
 }
 
-li {
-    margin: 10px 0;
+.card:hover .text-muted { color: white !important; }
+
+/* Progress Bars */
+.progress { background-color: rgba(255,255,255,0.1); }
+.progress-bar { background-color: var(--primary); }
+
+/* Form Controls */
+.form-control {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-color);
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+.form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--primary);
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-}
+.btn-primary { background: var(--primary); border: none; border-radius: 50px; }
