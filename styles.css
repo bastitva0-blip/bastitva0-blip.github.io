@@ -1,110 +1,175 @@
-:root {
-    --deep-blue: #0A192F;
-    --navy-blue: #112240;
-    --yellow-accent: #FFD700;
-    --white: #F8F9FA;
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
+/* Body and background */
 body {
-    background-color: var(--deep-blue);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #111827, #020617 55%, #000000 100%);
+  color: #f9fafb;
 }
 
 /* Navbar */
-.navbar { background-color: var(--navy-blue); padding: 1.2rem 0; }
-.navbar-brand h2 { font-weight: 900; color: var(--yellow-accent); letter-spacing: 2px; }
+.custom-navbar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+}
 
-/* Hero Section */
+.custom-navbar .navbar-brand h2 {
+  color: #f9fafb;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.custom-navbar .nav-link {
+  color: #e5e7eb !important;
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #facc15 !important;
+}
+
+/* Hero section */
 .hero-header {
-    padding: 10rem 0;
-    /* Hero with a dark tint overlay on the background image */
-    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
-                url('image_a46bb4.jpg') center/cover no-repeat fixed;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #f9fafb;
 }
 
-.hero-title { font-size: 5rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--white); }
-.hero-subtitle { font-size: 2rem; color: var(--yellow-accent); font-weight: 700; }
-.hero-tagline { font-size: 1.2rem; max-width: 600px; margin: auto; opacity: 0.9; color: var(--white); }
-
-/* Labels */
-.section-label {
-    background-color: var(--yellow-accent);
-    color: var(--deep-blue);
-    padding: 6px 16px;
-    font-weight: 900;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    letter-spacing: 1.5px;
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 3.8rem);
+  font-weight: 900;
 }
 
-/* Experience Box */
-.exp-box {
-    background-color: var(--navy-blue);
-    padding: 2rem;
-    border-radius: 12px;
-    border-left: 5px solid var(--yellow-accent);
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #e5e7eb;
+  margin-top: 0.5rem;
 }
 
-.text-yellow { color: var(--yellow-accent) !important; }
-
-/* Skills/Progress Bar */
-.progress-container {
-    background-color: #233554;
-    height: 12px;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background-color: var(--yellow-accent);
-}
-
-/* Certifications Cards */
-.cert-card {
-    background-color: var(--navy-blue);
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.cert-card:hover {
-    border-color: var(--yellow-accent);
-    transform: translateY(-10px);
+.hero-tagline {
+  margin-top: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #d1d5db;
 }
 
 /* Buttons */
 .btn-yellow {
-    background-color: var(--yellow-accent);
-    color: var(--deep-blue);
-    font-weight: 900;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
+  background-color: #facc15;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  color: #111827;
+  font-weight: 600;
+  border: none;
 }
 
-.btn-yellow:hover { background-color: #e6c200; }
+.btn-yellow:hover {
+  background-color: #eab308;
+  color: #020617;
+}
 
 .btn-outline-white {
-    border: 2px solid var(--white);
-    color: var(--white);
-    font-weight: 700;
-    padding: 12px 30px;
-    border-radius: 8px;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #e5e7eb;
+  color: #e5e7eb;
+  font-weight: 500;
 }
 
+.btn-outline-white:hover {
+  background-color: #e5e7eb;
+  color: #020617;
+}
+
+/* Section label */
+.section-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* About text */
+.about-text {
+  margin-top: 1rem;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+/* Experience box */
+.exp-box {
+  margin-top: 0.5rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #1f2937;
+}
+
+/* Skills */
+.skill-group .progress-container {
+  width: 100%;
+  height: 8px;
+  background: #111827;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-group .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #facc15, #f97316);
+}
+
+/* Certifications */
+.cert-card {
+  padding: 1.5rem 1.25rem;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 1rem;
+  border: 1px solid #1f2937;
+  text-align: center;
+}
+
+/* Contact links */
 .contact-link {
-    color: var(--white);
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 700;
+  color: #e5e7eb;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.contact-link:hover { color: var(--yellow-accent); }
+.contact-link:hover {
+  background-color: #111827;
+  border-color: #facc15;
+  color: #facc15;
+}
 
-.footer { text-align: center; background-color: var(--navy-blue); }
+/* Footer */
+.footer {
+  background: #020617;
+  border-top: 1px solid #111827;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .hero-header {
+    padding-top: 5rem;
+  }
+}
+
